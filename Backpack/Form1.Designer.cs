@@ -38,6 +38,8 @@
             this.combatShot = new System.Windows.Forms.PictureBox();
             this.knife = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bullets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquid)).BeginInit();
@@ -48,11 +50,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.combatShot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.knife)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // bullets
             // 
-            this.bullets.Location = new System.Drawing.Point(417, 247);
+            this.bullets.Location = new System.Drawing.Point(515, 247);
             this.bullets.Name = "bullets";
             this.bullets.Size = new System.Drawing.Size(100, 50);
             this.bullets.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -62,7 +66,7 @@
             // 
             // clip
             // 
-            this.clip.Location = new System.Drawing.Point(417, 191);
+            this.clip.Location = new System.Drawing.Point(515, 191);
             this.clip.Name = "clip";
             this.clip.Size = new System.Drawing.Size(100, 50);
             this.clip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -72,7 +76,7 @@
             // 
             // liquid
             // 
-            this.liquid.Location = new System.Drawing.Point(244, 192);
+            this.liquid.Location = new System.Drawing.Point(322, 191);
             this.liquid.Name = "liquid";
             this.liquid.Size = new System.Drawing.Size(100, 50);
             this.liquid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -81,7 +85,7 @@
             // 
             // emptySyringe
             // 
-            this.emptySyringe.Location = new System.Drawing.Point(138, 192);
+            this.emptySyringe.Location = new System.Drawing.Point(216, 191);
             this.emptySyringe.Name = "emptySyringe";
             this.emptySyringe.Size = new System.Drawing.Size(100, 50);
             this.emptySyringe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -90,7 +94,7 @@
             // 
             // vest
             // 
-            this.vest.Location = new System.Drawing.Point(523, 120);
+            this.vest.Location = new System.Drawing.Point(621, 118);
             this.vest.Name = "vest";
             this.vest.Size = new System.Drawing.Size(100, 66);
             this.vest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,7 +103,7 @@
             // 
             // gun
             // 
-            this.gun.Location = new System.Drawing.Point(417, 119);
+            this.gun.Location = new System.Drawing.Point(515, 118);
             this.gun.Name = "gun";
             this.gun.Size = new System.Drawing.Size(100, 66);
             this.gun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -110,7 +114,7 @@
             // shield
             // 
             this.shield.ImageLocation = "";
-            this.shield.Location = new System.Drawing.Point(296, 119);
+            this.shield.Location = new System.Drawing.Point(396, 118);
             this.shield.Name = "shield";
             this.shield.Size = new System.Drawing.Size(113, 67);
             this.shield.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -120,7 +124,7 @@
             // 
             // combatShot
             // 
-            this.combatShot.Location = new System.Drawing.Point(177, 119);
+            this.combatShot.Location = new System.Drawing.Point(277, 118);
             this.combatShot.Name = "combatShot";
             this.combatShot.Size = new System.Drawing.Size(113, 67);
             this.combatShot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +134,7 @@
             // 
             // knife
             // 
-            this.knife.Location = new System.Drawing.Point(52, 119);
+            this.knife.Location = new System.Drawing.Point(152, 118);
             this.knife.Name = "knife";
             this.knife.Size = new System.Drawing.Size(119, 67);
             this.knife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,11 +153,33 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(21, 118);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(125, 68);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(21, 192);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(125, 49);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 473);
+            this.ClientSize = new System.Drawing.Size(740, 473);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.bullets);
             this.Controls.Add(this.clip);
             this.Controls.Add(this.liquid);
@@ -176,6 +202,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.combatShot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.knife)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,6 +219,8 @@
         private System.Windows.Forms.PictureBox clip;
         private System.Windows.Forms.PictureBox bullets;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 
