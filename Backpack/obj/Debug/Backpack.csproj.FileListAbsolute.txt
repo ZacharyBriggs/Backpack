@@ -7,3 +7,5 @@ C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Deb
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.csproj.GenerateResource.Cache
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.exe
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.pdb
+C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Newtonsoft.Json.dll
+C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Newtonsoft.Json.xml

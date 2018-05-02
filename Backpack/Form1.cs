@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Backpack
 {
@@ -17,62 +18,81 @@ namespace Backpack
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            knife.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\knife.png") ;
-            combatShot.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\combatshot.png");
-            shield.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\shield.png");
-            gun.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\gun.png");
-            vest.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\vest.png");
-            pictureBox2.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\potion.png");
-            PictureBox test = new PictureBox();
-            test.Location = new Point(50, 50);
-            test.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\test.png");
-            test.SizeMode = PictureBoxSizeMode.StretchImage;
+            potion = new Potion();
+            shot = new Syringe("Combat Shot");
+            shield = new Shield();
+            baretta = new Gun("Baretta");
+            kevlar = new Vest();
+            backpack = new Bag(25);
+            textBox1.Text = backpack.name;
+            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (potion.putInContainer(backpack) == false)
+            {
+                textBox2.Text = "Backpack full.";
+            }
+            else
+                richTextBox1.Text += potion.name + "\n";
+            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            if (shot.putInContainer(backpack) == false)
+            {
+                textBox2.Text = "Backpack full.";
+            }
+            else
+                richTextBox1.Text += shot.name + "\n";
+            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            emptySyringe.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\syringe.png");
-            liquid.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\liquid.png");
+            shield.putInContainer(backpack);
+            if (shield.putInContainer(backpack) == false)
+            {
+                textBox2.Text = "Backpack full.";
+            }
+            else
+                richTextBox1.Text += shield.name + "\n";
+            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-
+            baretta.putInContainer(backpack);
+            if (baretta.putInContainer(backpack) == false)
+            {
+                textBox2.Text = "Backpack full.";
+            }
+            else
+                richTextBox1.Text += baretta.name + "\n";
+            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
         }
 
-        private void gun_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            gun.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\emptygun.png");
-            clip.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\clip.png");
+            kevlar.putInContainer(backpack);
+            if (kevlar.putInContainer(backpack) == false)
+            {
+                textBox2.Text = "Backpack full.";
+            }
+            else
+                richTextBox1.Text += kevlar.name + "\n";
+            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
         }
 
-        private void bullets_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void clip_Click(object sender, EventArgs e)
-        {
-            clip.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\emptyclip.png");
-            bullets.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\bullets.png");
-        }
-
-        private void pictureBox2_Click_1(object sender, EventArgs e)
-        {
-            pictureBox2.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\emptyflask.png");
-            pictureBox3.Image = Image.FromFile(@"C:\Users\s178020\Documents\Visual Studio 2015\Projects\Backpack\Backpack\Properties\Backpack Images\liquid.png");
-        }
-
-        private void pictureBox3_Click_1(object sender, EventArgs e)
-        {
-
+            string backpackState = JsonConvert.SerializeObject(backpack);
+            var path = System.IO.Path.Combine(Environment.CurrentDirectory, "backpack.txt");
+            System.IO.File.WriteAllText(path, backpackState);
+            textBox2.Text = "Backpack Saved.";
         }
     }
 }
