@@ -9,3 +9,9 @@ C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Deb
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.pdb
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Newtonsoft.Json.dll
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Debug\Backpack.csprojResolveAssemblyReference.cache
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Debug\Backpack.Form1.resources
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Debug\Backpack.Properties.Resources.resources
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Debug\Backpack.csproj.GenerateResource.Cache
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Debug\Backpack.csproj.CoreCompileInputs.cache
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Debug\Backpack.pdb
