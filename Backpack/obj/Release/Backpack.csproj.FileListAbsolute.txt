@@ -1,0 +1,12 @@
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Release\Backpack.csprojResolveAssemblyReference.cache
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Release\Backpack.Form1.resources
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Release\Backpack.Properties.Resources.resources
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Release\Backpack.csproj.GenerateResource.Cache
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Release\Backpack.csproj.CoreCompileInputs.cache
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\bin\Release\Backpack.exe.config
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\bin\Release\Backpack.exe
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\bin\Release\Backpack.pdb
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\bin\Release\Newtonsoft.Json.dll
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\bin\Release\Newtonsoft.Json.xml
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Release\Backpack.exe
+C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Release\Backpack.pdb
