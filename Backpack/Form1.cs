@@ -36,7 +36,7 @@ namespace Backpack
                 textBox2.Text = "Backpack full.";
             }
             else
-                richTextBox1.Text += potion.name + "\n";
+                listBox1.Items.Add(potion.name);
             textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
         }
 
@@ -47,7 +47,7 @@ namespace Backpack
                 textBox2.Text = "Backpack full.";
             }
             else
-                richTextBox1.Text += shot.name + "\n";
+                listBox1.Items.Add(shot.name);
             textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
         }
 
@@ -59,7 +59,7 @@ namespace Backpack
                 textBox2.Text = "Backpack full.";
             }
             else
-                richTextBox1.Text += shield.name + "\n";
+                listBox1.Items.Add(shield.name);
             textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
         }
 
@@ -71,7 +71,7 @@ namespace Backpack
                 textBox2.Text = "Backpack full.";
             }
             else
-                richTextBox1.Text += baretta.name + "\n";
+                listBox1.Items.Add(baretta.name);
             textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
         }
 
@@ -83,7 +83,7 @@ namespace Backpack
                 textBox2.Text = "Backpack full.";
             }
             else
-                richTextBox1.Text += kevlar.name + "\n";
+                listBox1.Items.Add(kevlar.name);
             textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
         }
 
@@ -93,6 +93,11 @@ namespace Backpack
             var path = System.IO.Path.Combine(Environment.CurrentDirectory, "backpack.txt");
             System.IO.File.WriteAllText(path, backpackState);
             textBox2.Text = "Backpack Saved.";
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -27,7 +27,6 @@ namespace Backpack
     {
         public Bag()
         {
-            maxWeight = 20;
             name = "Bag";
         }
         public Bag(int size)
