@@ -7,21 +7,67 @@ using System.Windows.Forms;
 
 namespace Backpack
 {
+    public interface IContainer
+    {
+        bool takeIn(IContainable item);
+        bool takeOut(IContainable item);
+        int MaxWeight { get; set; }
+        int CurrentWeight { get; set; }
+    }
     public interface IContainable
     {
-        bool putInContainer(Container bag);
+        bool putIn(IContainer bag);
+        bool takeOut(IContainer bag);
+        int size { get; set; }
     }
     public class Item
     {
         public string name;
-        public int size;
     }
 
-    public class Container : Item
+    public class Container : Item, IContainer
     {
         public List<IContainable> itemsContained = new List<IContainable>();
-        public int maxWeight = 20;
-        public int currentWeight = 0;
+
+        int IContainer.maxWeight
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        int IContainer.currentWeight
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool takeIn(IContainable item)
+        {
+            if (item.putIn(this))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool takeOut(IContainable item)
+        {
+            throw new NotImplementedException();
+        }
     }
     public class Bag : Container
     {
@@ -64,6 +110,19 @@ namespace Backpack
         }
         public int sharpness;
 
+        public int size
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public bool putInContainer(Container bag)
         {
             if (bag.currentWeight <= bag.maxWeight - size)
@@ -73,6 +132,22 @@ namespace Backpack
                 return true;
             }
             return false;
+        }
+
+        public bool putIn(IContainer bag)
+        {
+            if (bag.currentWeight <= bag.maxWeight - size)
+            {
+                bag.itemsContained.Add(this);
+                bag.currentWeight += size;
+                return true;
+            }
+            return false;
+        }
+
+        public bool takeOut(IContainer bag)
+        {
+            throw new NotImplementedException();
         }
     }
 
