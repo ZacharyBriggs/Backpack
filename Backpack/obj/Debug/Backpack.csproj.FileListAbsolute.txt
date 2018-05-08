@@ -1,11 +1,8 @@
-c:\users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Backpack.exe.config
-C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Backpack.exe
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Backpack.pdb
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.csprojResolveAssemblyReference.cache
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.Form1.resources
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.Properties.Resources.resources
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.csproj.GenerateResource.Cache
-C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.exe
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.pdb
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Newtonsoft.Json.dll
 C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Newtonsoft.Json.xml
@@ -15,3 +12,6 @@ C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Debug\Backpack.Properties
 C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Debug\Backpack.csproj.GenerateResource.Cache
 C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Debug\Backpack.csproj.CoreCompileInputs.cache
 C:\Users\Snaldo\Documents\GitHub\Backpack\Backpack\obj\Debug\Backpack.pdb
+C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Backpack.dll.config
+C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\bin\Debug\Backpack.dll
+C:\Users\s178020\documents\visual studio 2015\Projects\Backpack\Backpack\obj\Debug\Backpack.dll

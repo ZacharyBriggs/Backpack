@@ -25,7 +25,6 @@ namespace Backpack
 
     public class Backpack : IContainer
     {
-        
         public List<IContainable> itemsContained = new List<IContainable>();
 
         public void takeIn(IContainable item)
