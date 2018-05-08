@@ -31,30 +31,35 @@ namespace Backpack
         {
             potion.putIn(backpack);
             listBox1.Items.Add(potion.name);
+            comboBox1.Items.Add(potion.name);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             shot.putIn(backpack);
             listBox1.Items.Add(shot.name);
+            comboBox1.Items.Add(shot.name);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             shield.putIn(backpack);
             listBox1.Items.Add(shield.name);
+            comboBox1.Items.Add(shield.name);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             baretta.putIn(backpack);
             listBox1.Items.Add(baretta.name);
+            comboBox1.Items.Add(baretta.name);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             kevlar.putIn(backpack);
             listBox1.Items.Add(kevlar.name);
+            comboBox1.Items.Add(kevlar.name);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -68,6 +73,21 @@ namespace Backpack
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            foreach (var item in backpack.itemsContained)
+            {
+                if (item == comboBox1.Text)
+            }
+            comboBox1.Items.Remove(comboBox1.Text);
+            backpack.itemsContained.Remove(comboBox1.Focused);
         }
     }
 }
