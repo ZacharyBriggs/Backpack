@@ -25,66 +25,36 @@ namespace Backpack
             shield = new Shield();
             baretta = new Gun("Baretta");
             kevlar = new Vest();
-            backpack = new Bag(25);
-            textBox1.Text = backpack.name;
-            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
+            backpack = new Backpack();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (potion.putInContainer(backpack) == false)
-            {
-                textBox2.Text = "Backpack full.";
-            }
-            else
-                listBox1.Items.Add(potion.name);
-            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
+            potion.putIn(backpack);
+            listBox1.Items.Add(potion.name);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (shot.putInContainer(backpack) == false)
-            {
-                textBox2.Text = "Backpack full.";
-            }
-            else
-                listBox1.Items.Add(shot.name);
-            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
+            shot.putIn(backpack);
+            listBox1.Items.Add(shot.name);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            shield.putInContainer(backpack);
-            if (shield.putInContainer(backpack) == false)
-            {
-                textBox2.Text = "Backpack full.";
-            }
-            else
-                listBox1.Items.Add(shield.name);
-            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
+            shield.putIn(backpack);
+            listBox1.Items.Add(shield.name);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            baretta.putInContainer(backpack);
-            if (baretta.putInContainer(backpack) == false)
-            {
-                textBox2.Text = "Backpack full.";
-            }
-            else
-                listBox1.Items.Add(baretta.name);
-            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
+            baretta.putIn(backpack);
+            listBox1.Items.Add(baretta.name);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            kevlar.putInContainer(backpack);
-            if (kevlar.putInContainer(backpack) == false)
-            {
-                textBox2.Text = "Backpack full.";
-            }
-            else
-                listBox1.Items.Add(kevlar.name);
-            textBox3.Text = backpack.currentWeight + "/" + backpack.maxWeight;
+            kevlar.putIn(backpack);
+            listBox1.Items.Add(kevlar.name);
         }
 
         private void button6_Click(object sender, EventArgs e)

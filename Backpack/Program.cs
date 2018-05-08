@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -9,82 +10,32 @@ namespace Backpack
 {
     public interface IContainer
     {
-        bool takeIn(IContainable item);
-        bool takeOut(IContainable item);
-        int MaxWeight { get; set; }
-        int CurrentWeight { get; set; }
+        void takeIn(IContainable item);
+        void takeOut(IContainable item);
     }
     public interface IContainable
     {
-        bool putIn(IContainer bag);
-        bool takeOut(IContainer bag);
-        int size { get; set; }
+        void putIn(IContainer bag);
+        void takeOut(IContainer bag);
     }
     public class Item
     {
         public string name;
     }
 
-    public class Container : Item, IContainer
+    public class Backpack : IContainer
     {
+        
         public List<IContainable> itemsContained = new List<IContainable>();
 
-        int IContainer.maxWeight
+        public void takeIn(IContainable item)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            this.itemsContained.Add(item);
         }
 
-        int IContainer.currentWeight
+        public void takeOut(IContainable item)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool takeIn(IContainable item)
-        {
-            if (item.putIn(this))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public bool takeOut(IContainable item)
-        {
-            throw new NotImplementedException();
-        }
-    }
-    public class Bag : Container
-    {
-        public Bag()
-        {
-            name = "Bag";
-        }
-        public Bag(int size)
-        {
-            maxWeight = size;
-            name = "Bag";
-        }
-
-        public Bag(int size, string itemName)
-        {
-            maxWeight = size;
-            name = itemName;
+            this.itemsContained.Remove(item);
         }
     }
 
@@ -94,110 +45,74 @@ namespace Backpack
         {
             sharpness = 25;
             name = "Knife";
-            size = 1;
         }
         public Knife(int sharp, string itemName)
         {
             sharpness = sharp;
             name = itemName;
-            size = 1;
         }
 
         public Knife(string itemName)
         {
             name = itemName;
-            size = 1;
         }
         public int sharpness;
 
-        public int size
+        public void putIn(IContainer bag)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            bag.takeIn(this);
         }
 
-        public bool putInContainer(Container bag)
+        public void takeOut(IContainer bag)
         {
-            if (bag.currentWeight <= bag.maxWeight - size)
-            {
-                bag.itemsContained.Add(this);
-                bag.currentWeight += size;
-                return true;
-            }
-            return false;
-        }
-
-        public bool putIn(IContainer bag)
-        {
-            if (bag.currentWeight <= bag.maxWeight - size)
-            {
-                bag.itemsContained.Add(this);
-                bag.currentWeight += size;
-                return true;
-            }
-            return false;
-        }
-
-        public bool takeOut(IContainer bag)
-        {
-            throw new NotImplementedException();
+            bag.takeOut(this);
         }
     }
 
-    public class Potion : Container, IContainable
+    public class Potion : Item, IContainable
     {
         public bool isEmpty;
 
         public Potion()
         {
             name = "Potion";
-            size = 1;
         }
         public Potion(string itemName)
         {
             name = itemName;
-            size = 1;
         }
-        public bool putInContainer(Container bag)
+
+
+
+        public void putIn(IContainer bag)
         {
-            if (bag.currentWeight <= bag.maxWeight - size)
-            {
-                bag.itemsContained.Add(this);
-                bag.currentWeight += size;
-                return true;
-            }
-            return false;
+            bag.takeIn(this);
+        }
+        public void takeOut(IContainer bag)
+        {
+            bag.takeOut(this);
         }
     }
-    public class Syringe : Container, IContainable
+    public class Syringe : Item, IContainable
     {
         public Syringe()
         {
             name = "Syringe";
-            size = 1;
         }
         public Syringe(string itemName)
         {
             name = itemName;
-            size = 1;
         }
         public bool isEmpty;
-        public bool putInContainer(Container bag)
+
+        public void putIn(IContainer bag)
         {
-            if (bag.currentWeight <= bag.maxWeight - size)
-            {
-                bag.itemsContained.Add(this);
-                bag.currentWeight += size;
-                return true;
-            }
-            return false;
+            bag.takeIn(this);
+        }
+
+        public void takeOut(IContainer bag)
+        {
+            bag.takeOut(this);
         }
     }
 
@@ -208,45 +123,41 @@ namespace Backpack
         public Shield()
         {
             name = "Shield";
-            size = 2;
         }
-        public bool putInContainer(Container bag)
+
+        public void putIn(IContainer bag)
         {
-            if (bag.currentWeight <= bag.maxWeight - size)
-            {
-                bag.itemsContained.Add(this);
-                bag.currentWeight += size;
-                return true;
-            }
-            return false;
+            bag.takeIn(this);
+        }
+
+        public void takeOut(IContainer bag)
+        {
+            bag.takeOut(this);
         }
     }
 
-    public class Gun : Container, IContainable
+    public class Gun : Item, IContainable
     {
         public Gun()
         {
             name = "Gun";
-            size = 1;
         }
 
         public Gun(string itemName)
         {
             name = itemName;
-            size = 1;
         }
         public int numBullets;
         public List<string> usableCaliburs;
 
-        public bool putInContainer(Container bag)
+        public void putIn(IContainer bag)
         {
-            if (bag.currentWeight <= bag.maxWeight - size)
-            {
-                bag.itemsContained.Add(this);
-                bag.currentWeight += size;
-                return true;
-            }
-            return false;
+            bag.takeIn(this);
+        }
+
+        public void takeOut(IContainer bag)
+        {
+            bag.takeOut(this);
         }
     }
 
@@ -255,53 +166,26 @@ namespace Backpack
         public Vest()
         {
             name = "Vest";
-            size = 2;
         }
+
         public int armorLevel;
 
-        public bool putInContainer(Container bag)
+        public void putIn(IContainer bag)
         {
-            if (bag.currentWeight <= bag.maxWeight - size)
-            {
-                bag.itemsContained.Add(this);
-                bag.currentWeight += size;
-                return true;
-            }
-            return false;
-        }
-        static class Program
-        {
-
+            bag.takeIn(this);
         }
 
-        /*public class Liquid : Item, IContainable
+        public void takeOut(IContainer bag)
         {
-            public bool putInContainer(Backpack bag)
-            {
-                bag.itemsContained.Add(this);
-                return true;
-            }
+            bag.takeOut(this);
         }
+    }
 
-        public class Magazine : Container, IContainable
-        {
-            public bool putInContainer(Backpack bag)
-            {
-                bag.itemsContained.Add(this);
-                return true;
-            }
-        }
 
-        public class Bullet : Item, IContainable
-        {
-            public string calibur;
+    static class Program
+    {
 
-            public bool putInContainer(Backpack bag)
-            {
-                bag.itemsContained.Add(this);
-                return true;
-            }
-        }*/
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
